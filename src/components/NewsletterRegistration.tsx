@@ -28,7 +28,6 @@ export default function NewsletterRegistration() {
           return response.json();
         }
         return response.json().then((data) => {
-          console.log(data);
           throw new Error("Something went wrong!");
         });
       })
@@ -51,7 +50,7 @@ export default function NewsletterRegistration() {
     <section className="mb-2">
       <h2 className="text-xl mb-2">Sign up to stay updated!</h2>
       <form onSubmit={registrationHandler}>
-        <div className="border border-indigo-600 rounded p-1.5 m-1.5">
+        <div className="border border-teal-600 rounded p-1.5 m-1.5">
           <div className="mb-2">
             <label htmlFor="email">Your Email</label>
             <input
@@ -63,7 +62,7 @@ export default function NewsletterRegistration() {
               placeholder="Your email"
             />
           </div>
-          <button className="rounded text-sm bg-indigo-600 text-white p-1.5 m-1.5">
+          <button className="rounded text-sm bg-teal-600 text-white p-1.5 m-1.5">
             Register
           </button>
         </div>

@@ -21,7 +21,7 @@ export default function Notification({
     statusClasses = classes.error;
   }
 
-  const cssClasses = `${classes.notification} ${statusClasses}`;
+  const cssClasses = `${classes.notification} ${statusClasses} p-4`;
 
   return (
     <div className={cssClasses} onClick={notificationCtx.hideNotification}>

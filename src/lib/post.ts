@@ -29,17 +29,17 @@ export async function getPostIdList() {
 export async function getPostDetails(postId: string) {
   const dataSet: DataSet = {
     "1": {
-      title: "Post 1",
+      title: "Post: His mother had always taught him",
       description: "Lorem ipsum dolor sit amet...",
       date: "Oct 10, 2022",
     },
     "2": {
-      title: "Post 2",
+      title: "Post: This is important to remember.",
       description: "Lorem ipsum dolor sit amet...",
       date: "Oct 20, 2022",
     },
     "3": {
-      title: "Post 3",
+      title: "Post: Any idea what this is?",
       description: "Lorem ipsum dolor sit amet...",
       date: "Oct 30, 2022",
     },

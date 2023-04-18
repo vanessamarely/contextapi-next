@@ -10,13 +10,13 @@ export default function Post() {
   return (
     <div>
       <div className="mb-6">
-        <h1>Single post page</h1>
-        <h3 className="text-xl mb-2">This is pos {postId}</h3>
+        <h1 className="text-3xl mb-8">Post Page</h1>
+        <h3 className="text-xl mb-2">The post selected is {postId}</h3>
         <button
-          className="rounded text-sm bg-indigo-600 text-white p-1.5 m-1.5"
+          className="rounded text-sm bg-teal-600 text-white p-1.5 m-1.5"
           onClick={() => router.push("/posts")}
         >
-          Volver
+          Back to posts
         </button>
       </div>
       <NewsletterRegistration />

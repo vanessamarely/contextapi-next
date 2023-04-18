@@ -7,7 +7,7 @@ export default function App({ Component, pageProps }: AppProps) {
   return (
     <NotificationContextProvider>
       <Layout>
-        <main className="flex min-h-screen flex-col items-center justify-between p-24">
+        <main className="flex min-h-screen flex-col items-center justify-between p-16">
           <Component {...pageProps} />
         </main>
       </Layout>

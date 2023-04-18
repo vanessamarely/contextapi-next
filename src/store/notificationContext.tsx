@@ -12,12 +12,14 @@ const Initialvalue = {
   status: "",
 };
 
+//create context
 const NotificationContext = createContext({
   notification: Initialvalue,
   showNotification: (notificationData: NotificationData) => {},
   hideNotification: () => {},
 });
 
+// create a function that will be used to wrap the app using the context provider
 export function NotificationContextProvider(props: any) {
   const [activeNotification, setActiveNotification] =
     useState<NotificationData>(Initialvalue);
@@ -43,14 +45,17 @@ export function NotificationContextProvider(props: any) {
   const hideNotificationHandler = () => {
     setActiveNotification(Initialvalue);
   };
+
+  //create context object
   const context = {
     notification: activeNotification,
     showNotification: showNotificationHandler,
     hideNotification: hideNotificationHandler,
   };
-
+  //return context provider
   return (
     <NotificationContext.Provider value={context}>
+      {/** props.children is the content that will be wrapped by the provider */}
       {props.children}
     </NotificationContext.Provider>
   );
