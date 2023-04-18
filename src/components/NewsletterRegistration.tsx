@@ -1,22 +1,12 @@
-import { useRef, useContext } from "react";
-import NotificationContext from "@/store/notificationContext";
+import { useRef } from "react";
 
 export default function NewsletterRegistration() {
-  //create a reference to the email input
   const emailInputRef = useRef<HTMLInputElement>(null);
-  //create a notification to make use of the context
-  const notificationCtx = useContext(NotificationContext);
-  //create a function to handle the form submission
+
   const registrationHandler = (event: React.FormEvent) => {
     event.preventDefault();
 
     const enteredEmail = emailInputRef.current!.value;
-
-    notificationCtx.showNotification({
-      title: "Signing up...",
-      message: "Registering for newsletter.",
-      status: "pending",
-    });
 
     fetch("/api/newsletter", {
       method: "POST",
@@ -33,19 +23,9 @@ export default function NewsletterRegistration() {
           throw new Error("Something went wrong!");
         });
       })
-      .then((data) =>
-        notificationCtx.showNotification({
-          title: "Success!",
-          message: "Successfully registered for newsletter!",
-          status: "success",
-        })
-      )
+      .then((data) => console.log(data))
       .catch((error) => {
-        notificationCtx.showNotification({
-          title: "Error!",
-          message: error.message || "Something went wrong!",
-          status: "error",
-        });
+        console.log(error);
       });
   };
 

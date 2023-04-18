@@ -1,6 +1,4 @@
-import { useContext } from "react";
 import classes from "./notification.module.css";
-import NotificationContext from "@/store/notificationContext";
 
 export default function Notification({
   title,
@@ -12,8 +10,7 @@ export default function Notification({
   status: string;
 }) {
   let statusClasses = "";
-  //create a notification to make use of the context
-  const notificationCtx = useContext(NotificationContext);
+
   //conditional classes
   if (status === "success") {
     statusClasses = classes.success;
@@ -26,7 +23,7 @@ export default function Notification({
   const cssClasses = `${classes.notification} ${statusClasses} p-4`;
 
   return (
-    <div className={cssClasses} onClick={notificationCtx.hideNotification}>
+    <div className={cssClasses}>
       <h2>{title}</h2>
       <p>{message}</p>
     </div>
