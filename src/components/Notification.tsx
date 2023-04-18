@@ -12,15 +12,17 @@ export default function Notification({
   status: string;
 }) {
   let statusClasses = "";
+  //create a notification to make use of the context
   const notificationCtx = useContext(NotificationContext);
+  //conditional classes
   if (status === "success") {
     statusClasses = classes.success;
   }
-
+  //conditional classes
   if (status === "error") {
     statusClasses = classes.error;
   }
-
+  //create a constant to hold the css classes
   const cssClasses = `${classes.notification} ${statusClasses} p-4`;
 
   return (

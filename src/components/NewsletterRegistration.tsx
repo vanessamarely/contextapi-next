@@ -2,9 +2,11 @@ import { useRef, useContext } from "react";
 import NotificationContext from "@/store/notificationContext";
 
 export default function NewsletterRegistration() {
+  //create a reference to the email input
   const emailInputRef = useRef<HTMLInputElement>(null);
+  //create a notification to make use of the context
   const notificationCtx = useContext(NotificationContext);
-
+  //create a function to handle the form submission
   const registrationHandler = (event: React.FormEvent) => {
     event.preventDefault();
 
@@ -23,7 +25,7 @@ export default function NewsletterRegistration() {
         "Content-Type": "application/json",
       },
     })
-      .then((response) => {
+      .then(async (response) => {
         if (response.ok) {
           return response.json();
         }
@@ -46,6 +48,7 @@ export default function NewsletterRegistration() {
         });
       });
   };
+
   return (
     <section className="mb-2">
       <h2 className="text-xl mb-2">Sign up to stay updated!</h2>

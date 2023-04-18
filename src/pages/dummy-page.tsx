@@ -9,7 +9,9 @@ type DataPrefecth = {
 type Props = {
   dataPrefetch: DataPrefecth;
 };
+//dummy page to test data fetching
 
+//fecther function
 const fetcher: Fetcher<DataPrefecth, string> = (url) =>
   fetch(url).then((res) => res.json());
 
@@ -18,10 +20,11 @@ export default function DummyPage({ dataPrefetch }: Props) {
   const { data, error } = useSWR("https://dummyjson.com/posts/1", fetcher);
   console.log(data);
 
+  //if error return error
   if (error) {
     return <div>Error</div>;
   }
-
+  //if not data return loading
   if (!data) {
     return <div>Loading...</div>;
   }

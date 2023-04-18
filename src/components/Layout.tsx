@@ -4,8 +4,9 @@ import Notification from "@/components/Notification";
 import NotificationContext from "@/store/notificationContext";
 
 export default function Layout({ children }: { children: React.ReactNode }) {
+  //create a notification to make use of the context
   const notificationCtx = useContext(NotificationContext);
-
+  //create an active notification to make use of the notification context
   const activeNotification = notificationCtx.notification;
 
   return (
